@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Virtual environment
+.venv/
+
+# Bundled JDK
+.tools/
+
+# GitHub workflow templates
+.github/
+
+# IDE settings
+.vscode/
+
+# OS files
+Thumbs.db
+.DS_Store

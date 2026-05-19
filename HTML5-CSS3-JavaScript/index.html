@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="main.js"></script>
+    <style>
+        /* Embedded/Internal CSS (exercise demo) */
+        /* Sets a gentle page background color (shows inline/internal usage) */
+        body { background-color: #f6f8fc; }
+    </style>
+</head>
+<body>
+    <!-- Exercise 1: Create the HTML5 Base Template -->
+    <!-- Header -->
+    <header id="mainHeader">
+        <h1 style="color:red">Local City Council Portal</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#welcome">Home</a>
+        <a href="#events">Events</a>
+        <a href="#news">Bulletin</a>
+        <a href="#registerSection">Register</a>
+        <a href="#contact">Contact</a>
+        <a href="help.html" target="_blank">Help</a>
+    </nav>
+    <!-- Exercise 2: Navigation and Linking -->
+
+    <!-- Main -->
+    <main id="welcome">
+        <style>
+            /* small internal CSS for welcome banner (exercise requirement) */
+            #welcomeBanner{
+                background: #dbeafe;
+                padding: 16px;
+                border-radius: 14px;
+                margin: 14px;
+                border: 1px solid rgba(35, 50, 74, 0.12);
+            }
+            .highlight{font-weight:700;color:#2447c9}
+        </style>
+
+        <div id="welcomeBanner">
+            <!-- Exercise 3: Welcome Message with Styling and ID/Class -->
+            <h2 class="highlight">Welcome to our Community Portal</h2>
+            <p>Community news, events and registration. <span style="color:red;font-weight:700">Special offer: free entry to first 50 registrants!</span></p>
+        </div>
+    </main>
+
+    <section id="announcements">
+        <h2><span id="loaderText">Latest Announcements</span> <span id="announcementSpinner" class="loading-spinner hidden" aria-hidden="true"></span></h2>
+        <ul id="announcementList"></ul>
+    </section>
+
+    <section id="events">
+        <h2>Upcoming Events</h2>
+        <p id="eventsStatus" class="loading-status">Loading event data...</p>
+        <div id="eventsSpinner" class="loading-spinner hidden" aria-hidden="true"></div>
+        <div class="controls">
+            <input type="text" id="eventSearch" placeholder="Search event by name..." />
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="community">Community</option>
+                <option value="food">Food</option>
+                <option value="workshop">Tech</option>
+                <option value="sports">Sports</option>
+                <option value="art">Cultural</option>
+            </select>
+        </div>
+        <div id="eventsContainer"></div>
+        <!-- Image gallery (2 rows x 3 columns) -->
+        <!-- Exercise 4: Image Gallery for Community Events -->
+        <div id="galleryWrapper">
+            <table class="gallery-table">
+                <tr>
+                    <td><figure><img src="images/event1.png" alt="Community cleanup" title="Community Cleanup Drive" class="gallery-img" ondblclick="enlargeImage(this)"><figcaption>Community Cleanup Drive</figcaption></figure></td>
+                    <td><figure><img src="images/event2.png" alt="Tree plantation" title="Tree Plantation" class="gallery-img" ondblclick="enlargeImage(this)"><figcaption>Tree Plantation</figcaption></figure></td>
+                    <td><figure><img src="images/event3.png" alt="Food festival" title="Food Festival" class="gallery-img" ondblclick="enlargeImage(this)"><figcaption>Food Festival</figcaption></figure></td>
+                </tr>
+                <tr>
+                    <td><figure><img src="images/event4.png" alt="Tech meetup" title="Tech Meetup" class="gallery-img" ondblclick="enlargeImage(this)"><figcaption>Tech Meetup</figcaption></figure></td>
+                    <td><figure><img src="images/event5.png" alt="Marathon" title="Marathon" class="gallery-img" ondblclick="enlargeImage(this)"><figcaption>Marathon</figcaption></figure></td>
+                    <td><figure><img src="images/event6.png" alt="Cultural event" title="Cultural Event" class="gallery-img" ondblclick="enlargeImage(this)"><figcaption>Cultural Event</figcaption></figure></td>
+                </tr>
+            </table>
+            <p class="small">Double-click any image to enlarge.</p>
+        </div>
+    </section>
+
+    <!-- Exercise 7: Table styling with th, zebra striping, border-collapse -->
+    <section id="schedule">
+        <h2>Event Schedule</h2>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Date</th>
+                    <th>Venue</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Community Cleanup Drive</td><td>2026-07-15</td><td>Central Park</td></tr>
+                <tr><td>Tree Plantation</td><td>2026-07-22</td><td>City Garden</td></tr>
+                <tr><td>Food Festival</td><td>2026-08-10</td><td>Town Square</td></tr>
+                <tr><td>Tech Meetup</td><td>2026-08-24</td><td>Library Hall</td></tr>
+                <tr><td>Marathon</td><td>2026-09-05</td><td>Riverfront</td></tr>
+                <tr><td>Cultural Event</td><td>2026-09-20</td><td>Auditorium</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="registerSection">
+    <!-- Exercise 5: Event Registration Form -->
+        <h2>Participant Registration</h2>
+        <div class="registration-form">
+            <form id="regForm">
+                <!-- Exercise 6: Event Feedback with Events Handling -->
+                <label>Full Name:</label>
+                <input type="text" name="fullName" required placeholder="Your full name" autofocus />
+
+                <label>Email Address:</label>
+                <input type="email" name="userEmail" required placeholder="you@example.com" />
+
+                <label>Phone:</label>
+                <input type="tel" name="phone" id="phoneField" placeholder="10-digit phone" onblur="validatePhone()" />
+
+                <label>Date of Attendance:</label>
+                <input type="date" name="attendDate" required />
+
+                <label>Event Type:</label>
+                <select name="eventSelection" id="eventSelect" required onchange="showFee(this)">
+                    <option value="">-- Choose --</option>
+                    <option value="cleanup">Community Cleanup Drive</option>
+                    <option value="plantation">Tree Plantation</option>
+                    <option value="food">Food Festival</option>
+                    <option value="workshop">Tech Meetup</option>
+                    <option value="sports">Marathon</option>
+                    <option value="art">Cultural Event</option>
+                </select>
+                <p>Fee: <span id="feeDisplay">Free</span></p>
+
+                <label>Message / Special Requests:</label>
+                <textarea name="message" id="messageBox" rows="3" placeholder="Any requirements..." onkeyup="updateCharCount()"></textarea>
+                <p>Characters: <span id="charCount">0</span></p>
+
+                <button type="submit" id="registerBtn" onclick="return handleRegisterClick(event)">Submit Registration</button>
+            </form>
+            <output id="confirmOutput"></output>
+            <p id="formFeedback"></p>
+            <div class="pref-actions">
+                <!-- Exercise 8: Saving User Preferences -->
+                <button id="clearPrefs">Clear Preferences</button>
+                <!-- Exercise 9: Geolocation for Event Mapping -->
+                <button id="findNearby">Find Nearby Events</button>
+                <div id="geoOutput"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="news-section">
+        <h2>Community Bulletin</h2>
+        <p>Local updates and volunteer opportunities.</p>
+        <p class="framework-note">React or Vue can make large portals easier to maintain with reusable components.</p>
+    </section>
+
+    <!-- Video Invite -->
+    <!-- Exercise 7: Video Invite with Media Events -->
+    <section id="videoInvite">
+        <h2>Community Cultural Celebration</h2>
+        <p class="small">Video: Community Cultural Celebration</p>
+        <div class="video-container">
+            <video id="promoVideo" width="320" controls muted playsinline oncanplay="videoReady()">
+                <source src="media/promo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p id="videoMsg"></p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>City Council Office</p>
+        <p>Email: info@localcity.gov</p>
+        <p>Phone: 1800-123-456</p>
+    </section>
+
+    <!-- Exercise 8: Box Model Demo - visibility vs display -->
+    <section id="boxModelDemo">
+        <h2>Box Model Demo</h2>
+        <div class="demo-box visible">Visible Box</div>
+        <div class="demo-box hidden-visibility">Hidden (visibility) - space remains</div>
+        <div class="demo-box hidden-display">Hidden (display) - no space</div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Exercise 10: Debugging with Chrome DevTools -->
+    <footer>
+        <p>&copy; 2026 Local City Council</p>
+    </footer>
+</body>
+</html>
