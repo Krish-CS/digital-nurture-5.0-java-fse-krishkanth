@@ -1,0 +1,504 @@
+/* ============================================
+   styles.css - Local Community Event Portal
+   Exercise 2: Commented sections for readability
+   ============================================ */
+
+/* ----- CSS Custom Properties ----- */
+:root {
+  --text: #21324d;
+  --muted: #5f6b7a;
+  --blue: #1f4ed8;
+  --blue-light: #dbeafe;
+  --panel: #ffffff;
+  --border: #d7deea;
+  --bg: #f6f8fc;
+  --shadow: 0 8px 18px rgba(33, 50, 77, 0.08);
+}
+
+/* ----- Reset & Universal Selector (Exercise 3) ----- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ----- Base HTML ----- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ----- Body with background image & fallback color (Exercise 4) ----- */
+body {
+  min-height: 100vh;
+  font-family: 'Roboto Slab', Georgia, 'Times New Roman', Times, serif;
+  color: var(--text);
+  background-color: #f6f8fc;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M0 30H120 M0 90H120' stroke='%23e7edf7' stroke-width='1'/%3E%3Cpath d='M30 0V120 M90 0V120' stroke='%23eef3fb' stroke-width='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  line-height: 1.6;
+}
+
+/* ----- Layout Containers ----- */
+#mainHeader,
+nav,
+main,
+section,
+footer {
+  width: min(1100px, calc(100% - 24px));
+  margin: 16px auto;
+}
+
+/* ----- Header Styles (Exercise 1, 3: ID selector #mainHeader) ----- */
+#mainHeader {
+  padding: 18px 16px;
+  text-align: center;
+  background: #fff3d6;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+#mainHeader h1 {
+  font-family: 'Roboto Slab', Georgia, 'Times New Roman', Times, serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 800;
+}
+
+/* ----- Navigation Styles (Exercise 6: link & list styling) ----- */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: var(--blue);
+  border-radius: 14px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 10px 14px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  background: rgba(255, 255, 255, 0.16);
+  outline: none;
+}
+
+/* List styles for nav menus (Exercise 6) */
+nav ul {
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+
+/* ----- Link Pseudo-classes (Exercise 6) ----- */
+a:link {
+  color: #1f4ed8;
+}
+a:visited {
+  color: #5b4bdb;
+}
+a:hover {
+  color: #1739a0;
+}
+a:active {
+  color: #0f2b7a;
+}
+
+/* ----- Section Card Styles ----- */
+section,
+#welcomeBanner {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+main > section {
+  padding: 18px;
+}
+
+#welcomeBanner {
+  padding: 18px;
+  background: var(--blue-light);
+  border-left: 6px solid var(--blue);
+}
+
+/* ----- Typography (Exercise 5: fonts, text-transform, letter-spacing) ----- */
+.highlight,
+h2 {
+  font-family: 'Roboto Slab', Georgia, 'Times New Roman', Times, serif;
+  font-weight: 800;
+}
+
+.highlight {
+  color: var(--blue);
+  font-size: 1.4rem;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+/* Section headings with gradient background (Exercise 4) */
+h2 {
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  color: var(--blue);
+  background: linear-gradient(135deg, #eef4ff 0%, #dbeafe 100%);
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Paragraph and sub-heading spacing */
+p,
+h3 {
+  margin: 8px 0;
+}
+
+/* Section inner padding */
+#announcements,
+#events,
+#registerSection,
+#news,
+#videoInvite,
+#schedule,
+#contact {
+  padding: 18px;
+}
+
+#contact {
+  padding-left: 26px;
+}
+
+#contact p {
+  margin-left: 6px;
+}
+
+/* ----- List Styles (Exercise 6) ----- */
+#announcementList {
+  list-style-type: square;
+  list-style-position: inside;
+  padding-left: 8px;
+}
+#announcementList li {
+  padding: 6px 0;
+  margin: 4px 0;
+}
+
+/* ----- Loading States ----- */
+.loading-status {
+  margin: 6px 0 10px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+  border: 2px solid rgba(31, 78, 216, 0.2);
+  border-top-color: var(--blue);
+  border-radius: 50%;
+  vertical-align: middle;
+  animation: spin 0.9s linear infinite;
+}
+
+.loading-spinner.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ----- Controls & Form Styles ----- */
+.controls {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 12px;
+  margin: 10px 0 16px;
+}
+
+.controls input,
+.controls select,
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font: inherit;
+  background: #fff;
+  color: var(--text);
+}
+
+.controls input:focus,
+.controls select:focus,
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: 2px solid rgba(31, 78, 216, 0.18);
+  border-color: var(--blue);
+}
+
+/* ----- Event Cards (Exercise 3: .eventCard class selector) ----- */
+#eventsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin: 12px 0 16px;
+}
+
+.event-card,
+.eventCard {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fbfcff;
+  box-shadow: var(--shadow);
+}
+
+.event-card button,
+.eventCard button,
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: var(--blue);
+  cursor: pointer;
+}
+
+.event-card button:hover,
+.eventCard button:hover,
+button:hover {
+  opacity: 0.95;
+}
+
+/* ----- Registration Form ----- */
+.registration-form {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+}
+
+form label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+form button[type='submit'] {
+  width: 100%;
+  margin-top: 12px;
+}
+
+form output,
+#formFeedback,
+#geoOutput,
+#videoMsg {
+  display: block;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  background: #f9fbff;
+}
+
+.pref-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 14px;
+}
+
+#clearPrefs {
+  background: #f4b400;
+  color: #2f2400;
+}
+
+#findNearby {
+  background: #16a34a;
+}
+
+/* ----- Multi-column Layout (Exercise 9) ----- */
+.news-section p {
+  columns: 2 220px;
+  column-gap: 24px;
+  column-rule: 1px solid #c8d2e2;
+}
+
+.framework-note {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #42526b;
+}
+
+/* ----- Table Styles (Exercise 7) ----- */
+.gallery-table {
+  width: 100%;
+  margin: 10px auto;
+  border-collapse: collapse;
+}
+
+.gallery-table td {
+  padding: 10px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.gallery-table tr:nth-child(even) td {
+  background: #f0f4ff;
+}
+
+/* Event Schedule Table (Exercise 7: th, zebra striping, border-collapse) */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 12px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.schedule-table th {
+  background: var(--blue);
+  color: #fff;
+  font-weight: 700;
+}
+
+.schedule-table tr:nth-child(even) td {
+  background: #f0f4ff;
+}
+
+/* ----- Figure / Image Styles ----- */
+figure {
+  margin: 0;
+}
+
+.gallery-img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border: 2px solid #cfd8e6;
+  border-radius: 10px;
+}
+
+.gallery-img.enlarged {
+  width: 320px;
+  height: 200px;
+}
+
+/* ----- Utility Classes ----- */
+.small {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Box Model demo (Exercise 8): visibility vs display */
+.demo-box {
+  display: inline-block;
+  padding: 14px 20px;
+  margin: 8px;
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  background: var(--blue-light);
+  font-weight: 700;
+}
+.hidden-visibility {
+  visibility: hidden;
+}
+.hidden-display {
+  display: none;
+}
+
+/* ----- Video Container ----- */
+.video-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+}
+
+video {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 12px;
+}
+
+/* ----- Footer ----- */
+footer {
+  padding: 16px;
+  text-align: center;
+  color: #fff;
+  background: var(--blue);
+  border-radius: 14px;
+}
+
+/* ----- Responsive / Media Queries (Exercise 10) ----- */
+@media (max-width: 768px) {
+  #mainHeader,
+  nav,
+  main,
+  section,
+  footer {
+    width: min(100%, calc(100% - 16px));
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav a {
+    text-align: center;
+  }
+
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  .news-section p {
+    columns: 1;
+  }
+
+  .gallery-img {
+    width: 110px;
+    height: 74px;
+  }
+
+  .schedule-table th,
+  .schedule-table td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+}
