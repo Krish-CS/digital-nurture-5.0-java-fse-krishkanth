@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>02-1 - Bootstrap Structure</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-3">
+  <div class="container">
+    <h2>Bootstrap Folder Structure</h2>
+    <p>This page briefly explains the usual Bootstrap download folders.</p>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <div class="p-3 border bg-light rounded h-100">
+          <h5>CSS Folder</h5>
+          <p class="mb-0">Contains the compiled styles such as <code>bootstrap.min.css</code> and source maps.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="p-3 border bg-light rounded h-100">
+          <h5>JS Folder</h5>
+          <p class="mb-0">Contains the JavaScript plugins and the bundle file used for components like modals and collapse.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="p-3 border bg-light rounded h-100">
+          <h5>Icons Folder</h5>
+          <p class="mb-0">Contains icon fonts or SVG assets when Bootstrap Icons are included locally.</p>
+        </div>
+      </div>
+    </div>
+    <div class="alert alert-info mt-3 mb-0">
+      The bundle file is usually the easiest choice because it already includes Popper where needed.
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
