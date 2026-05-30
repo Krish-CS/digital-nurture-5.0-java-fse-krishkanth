@@ -1,0 +1,8 @@
++-------------------------------+---------------+
+| title                         | session_count |
++-------------------------------+---------------+
+| Tech Innovators Meetup        |             3 |
+| AI & ML Conference            |             0 |
+| Frontend Development Bootcamp |             1 |
+| Cloud Infrastructure Seminar  |             0 |
++-------------------------------+---------------+
