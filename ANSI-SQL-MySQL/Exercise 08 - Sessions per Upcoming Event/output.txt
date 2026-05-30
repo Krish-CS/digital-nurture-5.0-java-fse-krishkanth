@@ -1,0 +1,7 @@
++-------------------------------+---------------+
+| title                         | session_count |
++-------------------------------+---------------+
+| Tech Innovators Meetup        |             4 |
+| Frontend Development Bootcamp |             1 |
+| Cloud Infrastructure Seminar  |             0 |
++-------------------------------+---------------+
