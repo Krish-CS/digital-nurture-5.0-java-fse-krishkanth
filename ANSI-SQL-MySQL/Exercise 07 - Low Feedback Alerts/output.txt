@@ -1,0 +1,6 @@
++--------------+--------+----------------------------------+-------------------------------+
+| full_name    | rating | comments                         | event_name                    |
++--------------+--------+----------------------------------+-------------------------------+
+| Ethan Hunt   |      2 | Poor audio quality in the room.  | Tech Innovators Meetup        |
+| Frank Miller |      1 | Event was cancelled last minute. | Frontend Development Bootcamp |
++--------------+--------+----------------------------------+-------------------------------+
