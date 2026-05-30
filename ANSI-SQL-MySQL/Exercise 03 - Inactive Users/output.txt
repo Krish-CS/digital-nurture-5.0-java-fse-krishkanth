@@ -1,0 +1,16 @@
++---------+----------------+
+| user_id | full_name      |
++---------+----------------+
+|       1 | Alice Johnson  |
+|       2 | Bob Smith      |
+|       3 | Charlie Lee    |
+|       4 | Diana King     |
+|       5 | Ethan Hunt     |
+|       6 | Frank Miller   |
+|       7 | Grace Hopper   |
+|       8 | Heidi Klum     |
+|       9 | Ivan Drago     |
+|      10 | Judy Garland   |
+|      11 | Karl Marx      |
+|      12 | Linus Torvalds |
++---------+----------------+
