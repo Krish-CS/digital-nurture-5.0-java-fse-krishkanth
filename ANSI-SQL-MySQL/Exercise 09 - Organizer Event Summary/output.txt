@@ -1,0 +1,7 @@
++----------------+-----------+-------------+
+| organizer_name | status    | event_count |
++----------------+-----------+-------------+
+| Alice Johnson  | upcoming  |           2 |
+| Charlie Lee    | completed |           1 |
+| Bob Smith      | upcoming  |           1 |
++----------------+-----------+-------------+
