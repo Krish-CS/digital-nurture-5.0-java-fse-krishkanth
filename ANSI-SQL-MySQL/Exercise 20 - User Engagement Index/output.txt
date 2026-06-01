@@ -1,0 +1,16 @@
++----------------+-------------------+---------------------+
+| full_name      | events_registered | feedbacks_submitted |
++----------------+-------------------+---------------------+
+| Alice Johnson  |                 2 |                   1 |
+| Bob Smith      |                 1 |                   2 |
+| Charlie Lee    |                 1 |                   1 |
+| Diana King     |                 1 |                   1 |
+| Ethan Hunt     |                 1 |                   2 |
+| Frank Miller   |                 0 |                   2 |
+| Grace Hopper   |                 0 |                   1 |
+| Heidi Klum     |                 0 |                   1 |
+| Ivan Drago     |                 0 |                   1 |
+| Judy Garland   |                 0 |                   1 |
+| Karl Marx      |                 0 |                   0 |
+| Linus Torvalds |                 0 |                   0 |
++----------------+-------------------+---------------------+
