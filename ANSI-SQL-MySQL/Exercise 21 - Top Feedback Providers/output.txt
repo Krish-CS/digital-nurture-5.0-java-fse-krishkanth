@@ -1,0 +1,9 @@
++---------------+----------------+
+| full_name     | feedback_count |
++---------------+----------------+
+| Bob Smith     |              2 |
+| Ethan Hunt    |              2 |
+| Frank Miller  |              2 |
+| Alice Johnson |              1 |
+| Charlie Lee   |              1 |
++---------------+----------------+
